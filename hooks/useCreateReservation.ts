@@ -1,6 +1,5 @@
 import axios from "axios"
 import { useState } from "react"
-
 export interface CreateReservation {
   idUsuario: number,
   idHabitacion: number,
