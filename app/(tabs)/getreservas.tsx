@@ -8,7 +8,11 @@ const GetReservas = () => {
   const [FechaEntrada, setEntrada] = useState("");
   const [FechaSalida, setSalida] = useState("");
 
-  return <Button style={styles.button} title="Visualizar Reservas" />;
+  return (
+    <View style={styles.container}>
+      <Button style={styles.button} title="Visualizar Reservas" />;
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
