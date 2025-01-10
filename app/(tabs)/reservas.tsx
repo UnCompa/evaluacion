@@ -2,11 +2,26 @@ import React, { useState } from "react";
 import { View, StyleSheet, Alert } from "react-native";
 import { Button, Input, Text } from "@rneui/base";
 import { router } from "expo-router";
+import { useCreateReservation } from "@/hooks/useCreateReservation";
 const reservasForm = () => {
   const [idUsuario, setUsuario] = useState("");
   const [idHabitacion, setHabitacion] = useState("");
-  const [FechaEntrada, setEntrada] = useState("");
-  const [FechaSalida, setSalida] = useState("");
+  const [FechaEntrada, setEntrada] = useState<string>("");
+  const [FechaSalida, setSalida] = useState<string>("");
+  const { createReservation } = useCreateReservation()
+  const handleCreate = () => {
+    console.log('Hola');
+    
+    const data = {
+        idUsuario: parseInt(idUsuario),
+        idHabitacion: parseInt(idHabitacion),
+        FechaEntrada,
+        FechaSalida
+    }
+    console.log(data);
+    
+    createReservation(data)
+  }
   return (
     <View style={styles.container}>
       <Text h4 style={styles.title}>
@@ -32,7 +47,7 @@ const reservasForm = () => {
         value={FechaSalida}
         onChangeText={setSalida}
       />
-      <Button style={styles.button} title="Guardar" />
+      <Button style={styles.button} title="Guardar" onPress={handleCreate}/>
       <Button style={styles.button} title="Visualizar Reservas" />
     </View>
   );
