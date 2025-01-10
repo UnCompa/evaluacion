@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Alert } from "react-native";
 import { Button, Input, Text } from "@rneui/base";
-import { router } from 'expo-router'
+import { router } from "expo-router";
 const reservasForm = () => {
   const [idUsuario, setUsuario] = useState("");
   const [idHabitacion, setHabitacion] = useState("");
@@ -34,13 +34,7 @@ const reservasForm = () => {
         onChangeText={setSalida}
       />
       <Button style={styles.button} title="Guardar" />
-      <Button
-        style={styles.button}
-        title="Visualizar Reservas"
-        onPress={()=>{
-            router.replace('./getReservas')
-        }}
-      />
+      <Button style={styles.button} title="Visualizar Reservas" />
     </View>
   );
 };
