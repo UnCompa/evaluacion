@@ -7,7 +7,6 @@ const reservasForm = () => {
   const [idHabitacion, setHabitacion] = useState("");
   const [FechaEntrada, setEntrada] = useState("");
   const [FechaSalida, setSalida] = useState("");
-
   return (
     <View style={styles.container}>
       <Text h4 style={styles.title}>
